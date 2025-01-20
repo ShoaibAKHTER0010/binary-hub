@@ -1,103 +1,197 @@
-import React from 'react'
+import React from "react";
+import { Box, Grid, Typography, Button, Card } from "@mui/material";
+import {
+  LightbulbOutlined,
+  VerifiedOutlined,
+  AttachMoneyOutlined,
+} from "@mui/icons-material";
 
-
-const Choose = () => {
-  const log1 = "/images/log-1.png";
-  const blackarrow = "/images/black-arrow.png";
-  const globe = "/images/globe.png";
-                   
-
+function Choose() {
   return (
-    <section>
-        {/* main-div */}
-        <div style={{height: '70vh',  }}>
-            {/* div-one */}
-            <div>
-            <div style={{color: '#9A2935', fontSize: 18, fontFamily: 'Inter', fontWeight: '500',  wordWrap: 'break-word'}}>Why Choose Us</div>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "#F7F9FF",
+      }}
+    >
+      <Box
+        sx={{
+          width: "90%",
+          py: 6,
+        }}
+      >
+        <Typography
+          variant="overline"
+          fontWeight="bold"
+          sx={{ color: "#9D1C1F", display: "block", mb: 1 }}
+        >
+          Why Choose Us
+        </Typography>
+        <Typography
+          variant="h3"
+          fontWeight="bold"
+          sx={{ mb: 4, color: "#330b0d" }}
+        >
+          Why choose us ?
+        </Typography>
 
-            <div style={{color: '#641B33', fontSize: 60, fontFamily: 'Inter', fontWeight: '600', wordWrap: 'break-word'}}>Why choose us ?</div>
+        <Grid container spacing={5} sx={{ mb: 6 }}>
+          {/* Card 1 */}
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            sx={
+              {
+                // width: '80%'
+              }
+            }
+          >
+            <Card
+              sx={{
+                borderRadius: "16px",
+                boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                textAlign: "left",
+                padding: 2,
+              }}
+            >
+              <LightbulbOutlined
+                sx={{ fontSize: 48, color: "#6C63FF", mb: 2 }}
+              />
+              <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
+                Innovation
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium.
+              </Typography>
+            </Card>
+          </Grid>
 
-            </div>
+          {/* Card 2 */}
+          <Grid item xs={12} sm={6} md={4}>
+            <Card
+              sx={{
+                borderRadius: "16px",
+                boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                textAlign: "center",
+                padding: 2,
+              }}
+            >
+              <VerifiedOutlined
+                sx={{ fontSize: 48, color: "#6C63FF", mb: 2 }}
+              />
+              <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
+                Quality-Focused
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium.
+              </Typography>
+            </Card>
+          </Grid>
 
-             {/* div-two */}
-             <div style={{ display: "flex", justifyContent:"space-around", gap:"20px",}}> 
-            {/* card-one */}
-            <div class="background">
-  <div class="container">
-    <img  src={log1} width="80" />
-  </div>
-  <div style={{height: 36, color: '#641B33', fontSize: 26, fontFamily: 'Inter', fontWeight: '700',}}>Innovation</div>
-  <div style={{color: '#A8A8A9', fontSize: 16, fontFamily: 'Inter', fontWeight: '500'}}>
-    Sed ut perspiciatis unde omnis iste natus
-    <br />
-    error sit voluptatem accusantium.
-  </div>
-</div>
+          {/* Card 3 */}
+          <Grid item xs={12} sm={6} md={4}>
+            <Card
+              sx={{
+                borderRadius: "16px",
+                boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                textAlign: "center",
+                padding: 2,
+              }}
+            >
+              <AttachMoneyOutlined
+                sx={{ fontSize: 48, color: "#6C63FF", mb: 2 }}
+              />
+              <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
+                Value For Money
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium.
+              </Typography>
+            </Card>
+          </Grid>
+        </Grid>
 
-{/* card-two */}
-<div class="background">
-  <div style={{display: "flex", flexDirection: "column", gap:"40px" }}>
-    <img  src={log1} width="80" />
-  </div>
-  <div style={{height: 36, color: '#641B33', fontSize: 26, fontFamily: 'Inter', fontWeight: '700',}}>Quality-Focused</div>
-  <div style={{color: '#A8A8A9', fontSize: 16, fontFamily: 'Inter', fontWeight: '500'}}>
-    Sed ut perspiciatis unde omnis iste natus
-    <br />
-    error sit voluptatem accusantium.
-  </div>
-</div>
-
-{/* card-three */}
-<div class="background">
-  <div class="container">
-    <img  src={log1} width="80" />
-  </div>
-  <div style={{height: 36, color: '#641B33', fontSize: 26, fontFamily: 'Inter', fontWeight: '700',}}>Value For Money</div>
-  <div style={{color: '#A8A8A9', fontSize: 16, fontFamily: 'Inter', fontWeight: '500'}}>
-    Sed ut perspiciatis unde omnis iste natus
-    <br />
-    error sit voluptatem accusantium.
-  </div>
-</div>
-             </div>
-
-             </div>
-
-              {/* div-three */}
-            <div style={{display: "flex", flexDirection: "column", gap:"100px"}}> 
-              {/* one */}
-            <div style={{display: "flex", justifyContent:"space-between"}}>
-            <div style={{color: '#641B33', fontSize: 60, fontFamily: 'Inter', fontWeight: '600', wordWrap: 'break-word'}}>Do you want to explore <br />
-              our outstanding work?</div>
-              {/* image */}
-              <div>
-              <img  src={globe} width="80" />
-              </div>
-            </div>
-
-            {/* two */}
-            <div style={{display: "flex", justifyContent:"space-between"}}>
-            <div style={{color: '#A8A8A9', fontSize: 16, fontFamily: 'Inter', fontWeight: '500'}}>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br />
-accusantium , totam rem aperiam, eaque ipsa quae ab illo <br /> inventore <br />
-et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim <br />
-ipsam voluptatem quia voluptas sit.
-  </div>
-
-  {/* links */}
- <div style={{display: "flex", justifyContent:"space-between"}}>
- <div>dribbble<span> <img src={blackarrow} alt="Example" width="10" /></span></div>
-  <div>linkedin<span><img src={blackarrow} alt="Example" width="10" /></span></div>
-  <div>contact Us<span><img src={blackarrow} alt="Example" width="10" /></span></div>
- </div>
-
-
-            </div>
-
-            </div>
-      
-    </section>
-  )
+        {/* Outstanding Work Section */}
+        <Box
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "16px",
+            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+            p: 4,
+            textAlign: "center",
+          }}
+        >
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            sx={{ mb: 2, color: "#330b0d" }}
+          >
+            Do you want to explore our outstanding work?
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium, totam rem aperiam, eaque ipsa quae ab illo inventore et
+            quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+            voluptatem quia voluptas sit.
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 2,
+              flexWrap: "wrap",
+            }}
+          >
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#9D1C1F",
+                color: "white",
+                textTransform: "none",
+                "&:hover": {
+                  backgroundColor: "#330b0d",
+                },
+              }}
+            >
+              Dribbble
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#9D1C1F",
+                color: "white",
+                textTransform: "none",
+                "&:hover": {
+                  backgroundColor: "#330b0d",
+                },
+              }}
+            >
+              LinkedIn
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#9D1C1F",
+                color: "white",
+                textTransform: "none",
+                "&:hover": {
+                  backgroundColor: "#330b0d",
+                },
+              }}
+            >
+              Contact Us
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
 }
 
-export default Choose
+export default Choose;

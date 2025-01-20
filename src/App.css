@@ -1,0 +1,11 @@
+/* Import slick carousel styles */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.css-1lvw2iy-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+  margin: 0 !important;
+}

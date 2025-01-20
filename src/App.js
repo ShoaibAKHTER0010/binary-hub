@@ -1,16 +1,15 @@
+import React from "react";
 
-import Cards from "./components/Cards/Cards";
-import Cards2 from "./components/Cards/Cards2";
-import CardHead from "./components/Cards/CardHead";
-import Choose from "./components/Choose/Choose";
+import "./App.css";
+// import CardList from "./Components/Protfolio/cardData.jsx"
+import Hero from "./Components/Protfolio/Hero";
+import Home from "./Components/home/Home";
 
 function App() {
   return (
-    <div>
-      <CardHead/>
-      <Cards/>
-      <Cards2/>
-      <Choose/>
+    <div className="App">
+      {/* <Home /> */}
+      <Hero />
     </div>
   );
 }
