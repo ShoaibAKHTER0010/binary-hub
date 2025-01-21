@@ -83,7 +83,7 @@ const CardList = () => {
     : cardData;
 
   return (
-    <div style={{position:"relative"}}>
+    <div style={{ position: 'relative' }}>
       <div style={{ margin: '20px auto', paddingTop: '50px' }}>
         <h1
           style={{
@@ -101,20 +101,44 @@ const CardList = () => {
       <div
         onClick={handleToggle}
         style={{
+          width:"240px",
           cursor: 'pointer',
           textAlign: 'center',
+          color:"black",
           justifySelf: 'end',
-          marginRight: '100px',
-          border: '2px solid transparent',
-          backgroundColor: '#9A2935',
-          borderRadius: '100%',
+          marginRight: '80px',
+          border: '2px solid #ccc',
+          // backgroundColor: '#9A2935',
+          borderRadius: '8px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          
         }}
       >
         {isExpanded ? (
-          <ExpandLessIcon style={{ fontSize: 48, color: 'white' }} />
+          <ExpandLessIcon style={{ fontSize: 40, color: 'white',backgroundColor: '#9A2935', borderRadius: '8px', }} />
         ) : (
-          <ExpandMoreIcon style={{ fontSize: 48, color: 'white' }} />
+          <ExpandMoreIcon style={{ fontSize: 40, color: 'white',backgroundColor: '#9A2935', borderRadius: '8px', }} />
         )}
+
+         {/* Display the label for the selected category or "All" if none is selected */}
+         <span
+          style={{
+            color: '#9A2935',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            fontFamily: 'Manrope',
+            
+          }}
+        >
+          {selectedCategory
+            ? selectedCategory
+                .split('-')
+                .join(' ')
+                .replace(/\b\w/g, (c) => c.toUpperCase())
+            : 'All'}
+        </span>
       </div>
 
       {/* Dropdown menu */}
@@ -122,18 +146,19 @@ const CardList = () => {
         <div
           style={{
             display: 'grid',
-            width:"240px",
+            width: '200px',
             position: 'absolute',
-            right:"0px",
+            right: '0px',
             gridTemplateColumns: 'repeat(1, 1fr)', // Two-column layout
-            gap: '10px',
+            gap: '25px',
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: '20px',
-            padding: '10px',
+            marginRight: '80px',
+            padding: '20px',
             border: '1px solid #ccc',
             borderRadius: '8px',
             backgroundColor: '#f9f9f9',
+            transition: 'transform 200s ease, opacity 1s ease', // Smooth animation
           }}
         >
           <label style={{ display: 'flex', alignItems: 'center' }}>
@@ -141,7 +166,7 @@ const CardList = () => {
               type="checkbox"
               onChange={handleAllToggle}
               checked={!selectedCategory} // "All" is selected when no category is selected
-              style={{ marginRight: '8px' }}
+              style={{ marginRight: '8px', accentColor: '#9A2935', }}
             />
             All
           </label>
@@ -154,7 +179,7 @@ const CardList = () => {
                 type="checkbox"
                 onChange={() => handleCategorySelect(category)}
                 checked={selectedCategory === category}
-                style={{ marginRight: '8px' }}
+                style={{ marginRight: '8px', accentColor: '#9A2935', }}
               />
               {category
                 .split('-')
