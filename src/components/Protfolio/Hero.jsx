@@ -98,9 +98,9 @@ function Hero() {
                 alt="Digital Solutions"
                 sx={{
                   width: { xs: "80%", md: "100%" },
-                  height:"510px",
+                  height:"388px",
                   borderRadius: "16px", 
-                  maxWidth: "600px",
+                  maxWidth: "500px",
                 }}
               />
             </Grid>
