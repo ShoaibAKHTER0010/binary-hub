@@ -1,20 +1,15 @@
-import React from "react";
-import Header from "./Header";
-import { Grid, Box, Typography, Button } from "@mui/material";
-import CardList from "./cardData";
-import Footer from "../Footer/Footer";
-
-import portbg from '../../Assets/images/portbg.png'
-
-
-
-function Hero() {
+import React from 'react'
+import { Grid, Box, Typography, } from "@mui/material";
+import portbg from '../../Assets/images/mark.png'
+import bg from '../../Assets/images/Hero.png'
+const MarkMain = () => {
   return (
-    <div>
-      <Header />
+    <>
+     <div>
+      
       <Box
         sx={{
-            backgroundColor:"#000",
+            backgroundImage: `url(${bg})`,
           backgroundSize: "cover",
           backgroundPosition: "top center",
           display: "flex",
@@ -44,7 +39,7 @@ function Hero() {
                     textAlign: { xs: "center", md: "left" },
                   }}
                 >
-                  WELCOM TO OUR WORLD
+                  Let us show you
                 </Typography>
                 <Typography
                   variant="h2"
@@ -59,8 +54,7 @@ function Hero() {
                     textAlign: { xs: "center", md: "left" },
                   }}
                 >
-                  Hi, we are member’s of 
-                  binary hub
+                Our Digital <br /> marketing Services
                 </Typography>
 
                 <Typography
@@ -107,10 +101,10 @@ function Hero() {
           </Grid>
         </Box>
       </Box>
-      <CardList />
-      <Footer />
+      
     </div>
-  );
+    </>
+  )
 }
 
-export default Hero;    
+export default MarkMain

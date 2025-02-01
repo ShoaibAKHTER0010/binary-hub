@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
-
-import Link from "../../Assets/images/Link.png";
+import { Link } from "react-router-dom";
+import Link1 from "../../Assets/images/Link.png";
 
 const ServiceCard = ({ title, description, image }) => {
   return (
@@ -33,14 +33,16 @@ const ServiceCard = ({ title, description, image }) => {
           }}
         >
           {title.split(" ")[0]} <br /> {title.split(" ")[1]}
-          <img
+         <Link to="/portfolio">
+         <img
             alt="img"
             style={{
               width: "60px",
               height: "60px",
             }}
-            src={Link}
+            src={Link1}
           />
+         </Link>
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {description}

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar,
-  Typography,
   IconButton,
   Button,
   Drawer,
@@ -14,7 +13,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close'; 
-// import logo from '../../../Assets/images/logo.png'; 
+import { Link } from 'react-router-dom'; // Add this for Link component
 import logo from '../../Assets/images/logo.png'
 
 const Header = () => {
@@ -24,7 +23,21 @@ const Header = () => {
     setIsDrawerOpen(open);
   };
 
-  const navItems = ['Home', 'Portfolios', 'Services', 'FAQs'];
+  const navItems = [
+    {
+      index: "Home",
+      link: "/"
+    },
+    {
+      index: "Portfolio",
+      link: "/portfolio"
+    },
+    {
+      index: "Blogs",
+      link: "/blogs"
+    }
+  
+  ];
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#000' }}>
@@ -60,7 +73,9 @@ const Header = () => {
                 },
               }}
             >
-              {item}
+              <Link to={item.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                {item.index}
+              </Link>
             </Button>
           ))}
         </Box>
@@ -107,12 +122,13 @@ const Header = () => {
             <ListItem key={index} disablePadding>
               <ListItemButton onClick={toggleDrawer(false)}>
                 <ListItemText
-                  primary={item}
+                  primary={
+                    <Link to={item.link} style={{ color: '#fff', textDecoration: 'none' }}>
+                      {item.index}
+                    </Link>
+                  }
                   sx={{
                     textAlign: 'center',
-                    '& .MuiTypography-root': {
-                      color: '#fff',
-                    },
                   }}
                 />
               </ListItemButton>

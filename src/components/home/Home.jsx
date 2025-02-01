@@ -1,30 +1,30 @@
 import React from "react";
-import Choose from "../Choose/Choose";
-import Counter from "../Counter/Counter";
-import HomePortfolio from "../HomePortfolio/HomePortfolio";
-import Services from "../Services/Services";
-import MountainBanner from "../MountainBanner/MountainBanner";
-import Hero from "../Hero/Hero";
-import About from "../About/About";
-// import Header from "../Header/Header";
-import FAQ from "../FAQ/FAQ";
-import Testimonials from "../Testimonails/Testimonials";
-import Footer from "../Footer/Footer";
+// import Choose from "../Choose/Choose";
+// import Counter from "../Counter/Counter";
 
+// import Services from "../Services/Services";
+
+// import Hero from "../Hero/Hero";
+// import About from "../About/About";
+// import FAQ from "../FAQ/FAQ";
+// import Testimonials from "../Testimonails/Testimonials";
+// import Footer from "../Footer/Footer";
+// import HomeBlog from "../home-blog/home-blog";
+import MarkHome from "../Marketing/MarkHome";
 function Home() {
   return (
     <div>
-      {/* <Header /> */}
-     <Hero /> 
-     <HomePortfolio />
-     <MountainBanner />
+     
+      <MarkHome/>
+     {/* <Hero /> 
       <Services />
       <Counter />
+      <HomeBlog/>
       <About />
       <Choose />
       <FAQ />
       <Testimonials />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

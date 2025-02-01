@@ -20,32 +20,39 @@ import logo from '../../Assets/images/logo.png'
 
 import bgImg from "../../Assets/images/Hero.png";
 import Img from "../../Assets/images/Heroimg.png";
+import { Link } from 'react-router-dom';
 
 function Hero() {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  
-    const toggleDrawer = (open) => () => {
-      setIsDrawerOpen(open);
-    };
-  
-    const navItems = ['Home', 'Portfolios', 'Services', 'FAQs'];
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawer = (open) => () => {
+    setIsDrawerOpen(open);
+  };
+
+  const navItems = [
+    {
+      index: "Home",
+      link: "/"
+    },
+    {
+      index: "Portfolio",
+      link: "/portfolio"
+    },
+    {
+      index: "Blogs",
+      link: "/blogs"
+    }
+  ];
+
   return (
-    <Box   sx={{
-      background: `url(${bgImg})`,
-      backgroundSize: "cover",
-      backgroundPosition: "top center",
-     
-    }}>
-       <AppBar position="static" 
-          sx={{
-            background: `transparent`,
-            backgroundSize: "cover",
-            backgroundPosition: "top center",
-            display: "flex",
-            justifyContent: "center",
-            boxShadow:"none"
-          }}
-       >
+    <Box
+      sx={{
+        background: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "top center",
+      }}
+    >
+    <AppBar position="static" sx={{ backgroundColor: '#000' }}>
       <Toolbar
         sx={{
           display: 'flex',
@@ -53,13 +60,15 @@ function Hero() {
           alignItems: 'center',
         }}
       >
+        {/* Logo Section */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <img src={logo} alt="Binary Digital Services Logo" style={{ width: '150px' }} />
         </Box>
 
+        {/* Navigation Links for Larger Screens */}
         <Box
           sx={{
-            display: { xs: 'none', md: 'flex' }, 
+            display: { xs: 'none', md: 'flex' }, // Hide on small screens
             alignItems: 'center',
           }}
         >
@@ -76,7 +85,9 @@ function Hero() {
                 },
               }}
             >
-              {item}
+              <Link to={item.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                {item.index}
+              </Link>
             </Button>
           ))}
         </Box>
@@ -123,12 +134,13 @@ function Hero() {
             <ListItem key={index} disablePadding>
               <ListItemButton onClick={toggleDrawer(false)}>
                 <ListItemText
-                  primary={item}
+                  primary={
+                    <Link to={item.link} style={{ color: '#fff', textDecoration: 'none' }}>
+                      {item.index}
+                    </Link>
+                  }
                   sx={{
                     textAlign: 'center',
-                    '& .MuiTypography-root': {
-                      color: '#fff',
-                    },
                   }}
                 />
               </ListItemButton>

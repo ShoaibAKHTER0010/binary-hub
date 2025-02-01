@@ -91,7 +91,7 @@ function FAQ() {
             </Typography>
           </Box>
           <Grid container spacing={6} alignItems="start">
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={12}>
               <Box
                 sx={{
                   backgroundColor: "#f9f9f9",
@@ -178,25 +178,7 @@ function FAQ() {
                 ))}
               </Box>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              md={5}
-              sx={{
-                display: "flex",
-                justifyContent: { xs: "center", md: "right" },
-              }}
-            >
-              <Box
-                component="img"
-                src={FAQImg}
-                alt="About"
-                sx={{
-                  width: "100%",
-                  borderRadius: "16px",
-                }}
-              />
-            </Grid>
+          
           </Grid>
         </Box>
       </Box>

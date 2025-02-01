@@ -1,16 +1,48 @@
 import React from "react";
 
 import "./App.css";
-// import CardList from "./Components/Protfolio/cardData.jsx"
-import Hero from "./Components/Protfolio/Hero";
-import Home from "./Components/home/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./components/home/Home";
+import PortfolioMain from "./components/Protfolio/Portfolio-main";
+import Blogs from "./components/Blogs/Blogs"
+
+import ServicesMain from "./components/Services/services-main";
+
+
+
 
 function App() {
+  const router = createBrowserRouter([
+    {path: "/",
+    element: <Home/>
+    },
+    {
+      path: "/portfolio",
+      element: <PortfolioMain/>
+
+
+    },
+    {
+      path: "/services",
+      element: <ServicesMain/>
+
+
+    },
+    {
+path: '/blogs',
+element : <Blogs/>
+
+
+    }
+
+  ])
   return (
-    <div className="App">
-      {/* <Home /> */}
-      <Hero />
-    </div>
+  <>
+  <RouterProvider router={router}/>
+
+  
+  </>
+  
   );
 }
 
